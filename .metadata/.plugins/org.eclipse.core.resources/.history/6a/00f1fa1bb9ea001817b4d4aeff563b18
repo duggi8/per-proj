@@ -1,0 +1,28 @@
+package code.heap;
+
+public class Box<T extends Comparable<T>> {
+	
+		T size;
+		T weight;
+		public T getSize() {
+			return size;
+		}
+		public void setSize(T size) {
+			this.size = size;
+		}
+		public T getWeight() {
+			return weight;
+		}
+		public void setWeight(T weight) {
+			this.weight = weight;
+		}
+		@Override
+		public int compareTo(Box<T> o) {
+		
+			int res = this.getSize().compareTo(o.getSize());
+			
+		}
+		
+		 
+	
+}

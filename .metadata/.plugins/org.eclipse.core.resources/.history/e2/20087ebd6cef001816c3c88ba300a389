@@ -1,0 +1,19 @@
+package code.arrays;
+//How do you find the missing number in a given integer array of 1 to 100?
+
+public class MissingNumber {
+
+	public static void main(String[] args) {
+
+	}
+
+	private static int getMissingNumber(int[] numbers, int totalCount) {
+		int expectedSum = totalCount * ((totalCount + 1) / 2);
+		int actualSum = 0;
+		for (int i : numbers) {
+			actualSum += i;
+		}
+		return expectedSum - actualSum;
+	}
+
+}

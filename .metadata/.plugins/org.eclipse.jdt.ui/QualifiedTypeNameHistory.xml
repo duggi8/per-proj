@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<qualifiedTypeNameHistroy>
+<fullyQualifiedTypeName name="code.recursion.Factorial"/>
+<fullyQualifiedTypeName name="code.sorting.QuickSort"/>
+<fullyQualifiedTypeName name="java.lang.Class"/>
+<fullyQualifiedTypeName name="java.lang.reflect.Array"/>
+<fullyQualifiedTypeName name="code.heap.Heap"/>
+<fullyQualifiedTypeName name="code.heap.Heap.HeapEmptyException"/>
+<fullyQualifiedTypeName name="java.lang.Comparable"/>
+<fullyQualifiedTypeName name="code.heap.Box"/>
+<fullyQualifiedTypeName name="code.heap.MinHeap"/>
+<fullyQualifiedTypeName name="java.lang.Integer"/>
+</qualifiedTypeNameHistroy>

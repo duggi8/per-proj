@@ -1,0 +1,48 @@
+package code.sorting;
+
+public class QuickSort {
+
+	public static void main(String[] args) {
+		int[] arr = {7,4,8,2,5,3};
+		partition(arr, 0, 5);
+	}
+	public static void quickSort(int[] listToSort,int low,int high) {
+		
+	   
+		
+	}
+	
+	//I need to have a algorithm to shuffle < pivot and > pivot on either side
+	
+	public static int partition(int[] list,int l ,int h) {
+		int pivIndex = l;
+		int pointer = l+1;
+		int high = h;
+		while(pointer < high) {
+			if(list[pivIndex] > list[pointer]) {
+				swap(list,pivIndex,pointer);
+				pivIndex = pointer;
+				pointer++;
+			}
+			else  {
+				swap(list,pointer,high);
+				high--;
+			}
+			
+		}
+		System.out.println("pivIndex- " + pivIndex);
+		print(list);
+		return pivIndex
+	}
+	public static void swap(int[] listSwap , int s1,int s2) {
+		int temp = listSwap[s1];
+		listSwap[s1] = listSwap[s2];
+		listSwap[s2] = temp;
+	}
+	public static void print(int[] li) {
+		for(int i = 0;i<li.length;i++) {
+			System.out.print(li[i]);
+			System.out.println("-----");
+		}
+	}
+}
