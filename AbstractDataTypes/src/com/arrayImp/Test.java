@@ -1,11 +1,12 @@
 package com.arrayImp;
 
-import com.arrayImp.CircularQueue.QueueOverflowException;
-import com.arrayImp.CircularQueue.QueueUnderflowException;
+import com.linkedListImp.Queue;
+import com.linkedListImp.QueueOverflowException;
+import com.linkedListImp.QueueUnderflowException;
 
 public class Test {
 
-	public static void main(String[] args) throws QueueUnderflowException, QueueOverflowException{
+	public static void main(String[] args) throws QueueOverflowException,QueueUnderflowException{
 		CircularQueue<Integer> cq = new CircularQueue<>(Integer.class, 7);
 		
 			cq.enqueue(3);	
@@ -22,6 +23,17 @@ public class Test {
 			System.out.println(cq.isEmpty());
 			cq.dequeue();
 			cq.enqueue(11);
-		
+			System.out.println("****test queue with linked list implementation******");
+			Queue<Integer> q = new Queue<Integer>(5);
+			q.enqueue(4);
+			q.enqueue(5);
+			q.enqueue(6);
+			System.out.println(q.getCount());
+			q.enqueue(7);
+			q.enqueue(8);
+			System.out.println(q.isFull());
+			System.out.println(q.getFirst());
+			q.dequeue();
+			System.out.println(q.getFirst());
 	}
 }

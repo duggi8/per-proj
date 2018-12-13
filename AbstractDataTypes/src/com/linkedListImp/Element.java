@@ -11,6 +11,12 @@ public class Element<T> {
 		this.next = next;
 	}
 
+	public Element(T data) {
+		super();
+		this.data = data;
+
+	}
+
 	public T getData() {
 		return data;
 	}

@@ -3,6 +3,9 @@ package com.arrayImp;
 import java.awt.image.DataBufferShort;
 import java.lang.reflect.Array;
 
+import com.linkedListImp.QueueOverflowException;
+import com.linkedListImp.QueueUnderflowException;
+
 public class CircularQueue<T> {
 
 	public int getHeadIndex() {
@@ -64,15 +67,4 @@ public class CircularQueue<T> {
 		return data;
 	}
 
-	public static class QueueOverflowException extends Exception {
-		public QueueOverflowException(String msg) {
-			System.out.println(msg);
-		}
-	}
-
-	public static class QueueUnderflowException extends Exception {
-		public QueueUnderflowException(String msg) {
-			System.out.println(msg);
-		}
-	}
 }
