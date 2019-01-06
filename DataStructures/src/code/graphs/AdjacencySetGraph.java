@@ -22,9 +22,10 @@ import code.graphs.Graph.GraphType;
  * we use it when there is a sparse graph with less connections.
  * 
  * find out about arraylist,hashset time complexity to search for element.*/
-public class AdjacencySetGraph {
+public class AdjacencySetGraph implements Graph{
 
 	private List<Node> vertexList = new ArrayList<>();
+	
 	private GraphType graphType = GraphType.DIRECTED; // we can pass this from constructor but for now we are hardcoding this value.
 														
 	private int numVertices;
@@ -38,6 +39,11 @@ public class AdjacencySetGraph {
 
 	}
 	
+	public int getNumVertices() {
+		return numVertices;
+	}
+
+
 	public void addEdge(int v1,int v2) {
 		if(v1>= numVertices || v1<0 || v2>= numVertices || v2 <0) {
 			throw new IllegalArgumentException();
@@ -52,6 +58,22 @@ public class AdjacencySetGraph {
 		if(v>= numVertices || v<0)
 			throw new IllegalArgumentException();
 		return vertexList.get(v).getAdjacentVertices();
+	}
+	
+	public int getIndegree(int v) {
+		 if( v<0 || v>getNumVertices()) {
+				throw new IllegalArgumentException("v is not correct" + v);
+			}
+		int indegree = 0;
+		List<Integer> adj = new ArrayList<>();
+		for(int i = 0;i<getNumVertices();i++) {
+			adj = getAdjacentVertices(i);
+			if(adj.contains(v)) {
+				indegree++;
+			}
+			adj.clear();
+		}
+		return indegree;
 	}
 
 	public static class Node {
@@ -75,5 +97,11 @@ public class AdjacencySetGraph {
 			Collections.sort(adjacencyList);
 			return adjacencyList;
 		}
+	}
+
+	@Override
+	public int getWeightedEdge(int s, int n) {
+		// TODO Auto-generated method stub
+		return 0;
 	}
 }

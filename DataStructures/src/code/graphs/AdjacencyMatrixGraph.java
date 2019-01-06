@@ -44,12 +44,33 @@ public class AdjacencyMatrixGraph implements Graph {
 
 	@Override
 	public List<Integer> getAdjacentVertices(int v) {
+		if(v>= numVertices || v<0)
+			throw new IllegalArgumentException();
 		List<Integer> result = new ArrayList<>();
 		for(int j = 0;j<adjacencyMatrix.length;j++) {
 			if(adjacencyMatrix[v][j]==1)
 				result.add(j);
 		}
 		return result;
+	}
+	
+	public int getIndegree(int v) {
+		if(v>= numVertices || v<0)
+			throw new IllegalArgumentException();
+		
+		int indegree=0;
+		for(int j = 0;j<adjacencyMatrix.length;j++) {
+			if(adjacencyMatrix[j][v]==1)
+				indegree++;
+		} 
+		
+		return indegree;
+	}
+
+	@Override
+	public int getWeightedEdge(int s, int n) {
+		// TODO Auto-generated method stub
+		return 0;
 	}
 
 }

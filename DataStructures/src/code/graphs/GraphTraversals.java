@@ -23,13 +23,22 @@ public class GraphTraversals {
 		graph.addEdge(2, 3);
 		graph.addEdge(6, 3);
 		graph.addEdge(6, 7);
-		graph.addEdge(3, 7);
+		graph.addEdge(3, 7);  
+		//below step for unconnected graph else no for loop is needed.
+		for(int i = 0;i<graph.getNumVertices();i++) {
 		gt.BFTForGraph(graph, 1);
+		}
+		System.out.println("**************");
+		int[] processedArray = new int[graph.getNumVertices()];
+		//below step for unconnected graph else no for loop is needed.
+		for(int i = 0;i<graph.getNumVertices();i++) {
+			gt.DFTGraph(graph, i, processedArray);
+		}
 	}
 
-	public void BFTForGraph(Graph g,int vertex) throws QueueOverflowException, QueueUnderflowException {
-		Queue<Integer> q = new Queue<>(((AdjacencyMatrixGraph)g).getNumVertices());
-		int[] processed = new int[((AdjacencyMatrixGraph)g).getNumVertices()];
+	public void BFTForGraph(Graph g, int vertex) throws QueueOverflowException, QueueUnderflowException {
+		Queue<Integer> q = new Queue<>(g.getNumVertices());
+		int[] processed = new int[g.getNumVertices()];
 		q.enqueue(vertex);
 		while(!q.isEmpty()) {
 			int vertexProcessed = q.dequeue();
@@ -45,6 +54,19 @@ public class GraphTraversals {
 				q.enqueue(adj.get(i));
 			}
 		}
+	}
+	
+	public void DFTGraph(Graph g, int vertex,int[] processed) {
+		if(processed[vertex]==1)
+			return;
+		List<Integer> adjacent = g.getAdjacentVertices(vertex);
+		processed[vertex]=1;
+		System.out.print(vertex + "--->");
+		for(int i =0;i<adjacent.size();i++) {
+			DFTGraph(g, adjacent.get(i), processed);
+		}
+		
+		
 	}
 	
 }
