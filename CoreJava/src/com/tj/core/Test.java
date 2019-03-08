@@ -7,6 +7,9 @@ public class Test {
 		Circle c = new Circle(2,4);
 		moveCircle(c, 5, 3);
 		System.out.println(c);
+		
+		for(int i = 0;i<10;i++)
+		System.out.println(Math.random()*100);
 	}
 	
 	static void moveCircle(Circle cir,int x,int y) {

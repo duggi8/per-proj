@@ -69,5 +69,7 @@ public class TreeTraversal {
 		postOrderTraversal(n.getRight());
 		System.out.println(n.getData());
 	}
+	
+	
 
 }
