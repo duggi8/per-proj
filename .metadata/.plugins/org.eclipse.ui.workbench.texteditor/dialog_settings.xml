@@ -2,12 +2,18 @@
 <section name="Workbench">
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
 		<item value="false" key="isRegEx"/>
-		<item value="hystrix" key="selection"/>
+		<item value="" key="selection"/>
 		<item value="false" key="casesensitive"/>
 		<item value="false" key="incremental"/>
 		<item value="true" key="wrap"/>
 		<item value="false" key="wholeword"/>
 		<list key="findhistory">
+			<item value="zipkin"/>
+			<item value="50e574c2f0b9c499"/>
+			<item value="f7200d438188b22d"/>
+			<item value="8080"/>
+			<item value="bind"/>
+			<item value="started"/>
 			<item value="hystrix"/>
 			<item value="be58d519a2e4af81"/>
 			<item value="USD"/>

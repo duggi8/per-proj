@@ -66,17 +66,16 @@ public class Singleton {
 	 * 
 	 * public static Singleton getInstance() { return SingletonHelper.INSTANCE; }
 	 */
-	
-	
-	/***********Using Reflection to destroy Singleton Pattern****************/
+
+	/*********** Using Reflection to destroy Singleton Pattern ****************/
 	public static void main(String[] args) {
 		Singleton instance1 = Singleton.getInstance();
 		Singleton instance2 = null;
 		try {
 			Constructor[] constructors = Singleton.class.getDeclaredConstructors();
-			for(Constructor constructor:constructors) {
+			for (Constructor constructor : constructors) {
 				constructor.setAccessible(true);
-				instance2 = (Singleton)constructor.newInstance();
+				instance2 = (Singleton) constructor.newInstance();
 				break;
 			}
 		} catch (Exception e) {
