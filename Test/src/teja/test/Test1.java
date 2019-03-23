@@ -11,6 +11,7 @@ public class Test1 {
 
 		Set<Integer> s = new HashSet<>();
 		int[] arr = new int[3];
+		boolean areSame = false;
 		while(areSame!= true) {
 			Arrays.sort(arr);
 			int max = arr[arr.length-1] ;
