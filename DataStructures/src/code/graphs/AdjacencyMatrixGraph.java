@@ -10,7 +10,7 @@ public class AdjacencyMatrixGraph implements Graph {
 	private GraphType graphType = GraphType.DIRECTED;
 	private int numVertices=0;
 	
-	//atrix initialization in constructor using num of vertices and graph type.
+	//matrix initialization in constructor using num of vertices and graph type.
 	public AdjacencyMatrixGraph(int numVertices,GraphType graphType) {
 		this.adjacencyMatrix = new int[numVertices][numVertices];
 		this.numVertices = numVertices;

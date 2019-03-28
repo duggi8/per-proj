@@ -9,7 +9,7 @@ import java.util.Set;
 
 import code.graphs.Graph.GraphType;
 
-/*This is AdjacencySet impl of Graph. Here every node(vertex) in graph stores its adjacent vertices using a set.Hence we modeled a node such a way that it has
+/*This is Adjacency Set impl of Graph. Here every node(vertex) in graph stores its adjacent vertices using a set.Hence we modeled a node such a way that it has
  * hashset in it to store its adjacent vertices
  * Observe we are instantiating a static class here.'Node' class is created as static because it belongs to 'AdjacencySetGraph' only. 
  * 
