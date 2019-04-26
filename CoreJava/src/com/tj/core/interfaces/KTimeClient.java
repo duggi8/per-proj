@@ -24,7 +24,7 @@ public interface KTimeClient {
 	    }
 	        //when people need to add additional methods in interfaces the client needs to implement the methods even when won't use it and 
 	    //changes need to be made in impl code. So default implementation is provided in the interface itself so that impl code does not need to 
-	    //override it ifthey won't use it. That is the use of default method in interface. Static methods are provided to support default methods like below.
+	    //override it if they won't use it. That is the use of default method in interface. Static methods are provided to support default methods like below.
 	    default ZonedDateTime getZonedDateTime(String zoneString) {
 	        return ZonedDateTime.of(getLocalDateTime(), getZoneId(zoneString));
 	    }

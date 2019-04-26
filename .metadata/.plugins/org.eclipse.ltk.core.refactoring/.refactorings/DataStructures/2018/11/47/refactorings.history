@@ -1,4 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<session version="1.0">
-<refactoring comment="Move package &apos;code.recursion&apos; to &apos;Strategy/src/divideAndConquer&apos;&#x0D;&#x0A;- Original project: &apos;DataStructures&apos;&#x0D;&#x0A;- Destination element: &apos;Strategy/src/divideAndConquer&apos;&#x0D;&#x0A;- Original element: &apos;DataStructures/src/code.recursion&apos;&#x0D;&#x0A;- Update references to refactored element" description="Move package" destination="=Strategy/src&lt;divideAndConquer" element1="/src&lt;code.recursion" flags="589830" fragments="1" id="org.eclipse.jdt.ui.move" policy="org.eclipse.jdt.ui.movePackages" stamp="1543006619103" version="1.0"/>
-</session>

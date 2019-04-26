@@ -1,37 +1,41 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <section name="Workbench">
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
-		<item value="false" key="isRegEx"/>
-		<item value="look" key="selection"/>
-		<item value="false" key="casesensitive"/>
-		<item value="false" key="incremental"/>
-		<item value="true" key="wrap"/>
-		<item value="false" key="wholeword"/>
+		<item key="selection" value="CONTENT_TYPE"/>
+		<item key="wrap" value="true"/>
+		<item key="casesensitive" value="true"/>
+		<item key="wholeword" value="false"/>
+		<item key="incremental" value="false"/>
+		<item key="isRegEx" value="false"/>
 		<list key="findhistory">
-			<item value="look"/>
-			<item value="ctx"/>
-			<item value="zipkin"/>
-			<item value="50e574c2f0b9c499"/>
-			<item value="f7200d438188b22d"/>
-			<item value="8080"/>
-			<item value="bind"/>
-			<item value="started"/>
-			<item value="hystrix"/>
-			<item value="be58d519a2e4af81"/>
-			<item value="USD"/>
-			<item value="request uri"/>
-			<item value="request"/>
+			<item value="CONTENT_TYPE"/>
+			<item value="accept"/>
+			<item value="accept-hea"/>
+			<item value="media"/>
+			<item value="node"/>
+			<item value="tree"/>
+			<item value="Node"/>
 			<item value="result"/>
-			<item value="DispatcherServlet"/>
+			<item value="mid"/>
+			<item value="arr"/>
+			<item value="binarySearch"/>
 		</list>
 		<list key="replacehistory">
+			<item value="n"/>
+			<item value="t"/>
+			<item value="TreeNode"/>
+			<item value="N"/>
+			<item value="res"/>
+			<item value="m"/>
+			<item value="a"/>
+			<item value="binSearch"/>
 		</list>
 	</section>
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog_dialogBounds">
-		<item value="284" key="DIALOG_WIDTH"/>
-		<item value="1|Segoe UI|9.0|0|WINDOWS|1|-12|0|0|0|400|0|0|0|1|0|0|0|0|Segoe UI" key="DIALOG_FONT_NAME"/>
-		<item value="375" key="DIALOG_HEIGHT"/>
-		<item value="1255" key="DIALOG_X_ORIGIN"/>
-		<item value="203" key="DIALOG_Y_ORIGIN"/>
+		<item key="DIALOG_X_ORIGIN" value="1127"/>
+		<item key="DIALOG_Y_ORIGIN" value="179"/>
+		<item key="DIALOG_WIDTH" value="336"/>
+		<item key="DIALOG_HEIGHT" value="454"/>
+		<item key="DIALOG_FONT_NAME" value="1|Segoe UI|9.0|0|WINDOWS|1|-15|0|0|0|400|0|0|0|1|0|0|0|0|Segoe UI"/>
 	</section>
 </section>

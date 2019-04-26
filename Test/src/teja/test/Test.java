@@ -1,53 +1,94 @@
 package teja.test;
 
-import java.nio.charset.StandardCharsets;
-import java.security.MessageDigest;
-import java.security.NoSuchAlgorithmException;
+import java.io.Closeable;
+import java.io.IOException;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+import java.util.concurrent.Callable;
 
-public class Test {
+/* Java implementation to convert infix expression to postfix*/
+//Note that here we use Stack class for Stack operations 
 
-	public static void main(String[] args) throws NoSuchAlgorithmException {
-		String orginalString = "https://www.baeldung.com/sha-256-hashing-javaoooooooooooooooooooooooooooooooooooooooooooooooooo";
-		String orginalString2 = "https://www.baeldung.com/sha-256-hashing-jaa";
-		byte[] enc = orginalString.getBytes(StandardCharsets.UTF_8); //encodes the string
-		System.out.println(enc.length);
-	/*	for(int i = 0; i< enc.length;i++) {
-			System.out.println(enc[i]);
-		}
-		*/
-		MessageDigest md = MessageDigest.getInstance("SHA-256");
-		
-		byte[] encodedHash =  md.digest(orginalString.getBytes(StandardCharsets.UTF_8));
-		System.out.println(encodedHash.length);
-		
-		for(int i = 0; i< encodedHash.length;i++) {
-			System.out.println(encodedHash[i]);
-		}
-		System.out.println(bytesToHex(encodedHash));
-		System.out.println(bytesToHex(md.digest(orginalString2.getBytes(StandardCharsets.UTF_8))));
-		System.out.println(bytesToHex(encodedHash).equals(bytesToHex(md.digest(orginalString2.getBytes(StandardCharsets.UTF_8)))));
-		
-	}
+import java.util.Stack; 
+
+class Test 
+{ 
+	// A utility function to return precedence of a given operator 
+	// Higher returned value means higher precedence 
+	static int Prec(char ch) 
+	{ 
+		switch (ch) 
+		{ 
+		case '+': 
+		case '-': 
+			return 1; 
 	
-	public static String bytesToHex(byte[] b) {
-		StringBuffer sb = new StringBuffer();
-		for(int i = 0;i<b.length;i++) {
-			String hex = Integer.toHexString(0xFF & b[i]);
-			int temp = 0xFF & b[i];
-			
-			System.out.println(temp);
-			if(hex.length()==1)
-				sb.append('0');
-			sb.append(hex);
-			
-		}
-
-		return sb.toString();
-	}
-	public static void partition(int[] a,int l ,int h) {
-		int p = l;
+		case '*': 
+		case '/': 
+			return 2; 
+	
+		case '^': 
+			return 3; 
+		} 
+		return -1; 
+	} 
+	
+	// The main method that converts given infix expression 
+	// to postfix expression. 
+	static String infixToPostfix(String exp) 
+	{ 
+		// initializing empty String for result 
+		String result = new String(""); 
 		
+		// initializing empty stack 
+		Stack<Character> stack = new Stack<>(); 
 		
-	}
-
-}
+		for (int i = 0; i<exp.length(); ++i) 
+		{ 
+			char c = exp.charAt(i); 
+			
+			// If the scanned character is an operand, add it to output. 
+			if (Character.isLetterOrDigit(c)) 
+				result += c; 
+			
+			// If the scanned character is an '(', push it to the stack. 
+			else if (c == '(') 
+				stack.push(c); 
+			
+			// If the scanned character is an ')', pop and output from the stack 
+			// until an '(' is encountered. 
+			else if (c == ')') 
+			{ 
+				while (!stack.isEmpty() && stack.peek() != '(') 
+					result += stack.pop(); 
+				
+				if (!stack.isEmpty() && stack.peek() != '(') 
+					return "Invalid Expression"; // invalid expression				 
+				else
+					stack.pop(); 
+			} 
+			else // an operator is encountered 
+			{ 
+				while (!stack.isEmpty() && Prec(c) <= Prec(stack.peek())) 
+					result += stack.pop(); 
+				stack.push(c); 
+			} 
+	
+		} 
+	
+		// pop all the operators from the stack 
+		while (!stack.isEmpty()) 
+			result += stack.pop(); 
+	
+		return result; 
+	} 
+	
+	// Driver method 
+	public static void main(String[] args) 
+	{ 
+		//String exp = "a+b*(c^d-e)^(f+g*h)-i"; 
+		String exp = "5*(4+3)*2–6";
+		//String exp = "(2+3)*8/10";
+		System.out.println(infixToPostfix(exp)); 
+	} 
+} 
