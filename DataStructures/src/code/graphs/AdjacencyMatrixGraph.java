@@ -33,7 +33,7 @@ public class AdjacencyMatrixGraph implements Graph {
 
 	@Override
 	public void addEdge(int v1, int v2) {
-		if(v1>numVertices || v1<0 || v2>numVertices ||v2<0) {
+		if(v1>=numVertices || v1<0 || v2>=numVertices ||v2<0) {
 			throw new IllegalArgumentException("vertex number is not valid");
 		}
 		adjacencyMatrix[v1][v2]= 1;

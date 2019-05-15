@@ -16,9 +16,9 @@ import code.graphs.Graph.GraphType;
  * AdjacencyList uses linkedlist to store their adjacent element similar to below AjacencySet which uses HashSet.
  * 
  * Adjacency Matrix is worth it if there are large number of connections between vertices. Because in Matrix Impl we are creating a space
- * even when there is edge between two vertices. So if many vertices have large connections then it is worth using matrix impl.
+ * even when there is no edge between two vertices. So if many vertices have large connections then it is worth using matrix impl.
  * 
- * Adjacency set we will add to hashset only when there is an adjacent element for a vertex so we don't create empty spaces before itself like in Matrix Impl
+ * In Adjacency set we will add to hashset only when there is an adjacent element for a vertex so we don't create empty spaces before itself like in Matrix Impl
  * we use it when there is a sparse graph with less connections.
  * 
  * find out about arraylist,hashset time complexity to search for element.*/

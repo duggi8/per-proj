@@ -1,8 +1,11 @@
 package com.example.demo;
 
+import static org.assertj.core.api.Assertions.assertThat;
+
 import java.util.Collection;
 import java.util.Collections;
 
+import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.Mockito;
@@ -20,12 +23,11 @@ import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
 
 import com.example.demo.service.UserService;
 
+
 @RunWith(SpringRunner.class)
-@WebMvcTest
-@ContextConfiguration(classes = {UserService.class})
 public class SpringJpah2ApplicationTests {
 
-	@Autowired
+	/*@Autowired
 	MockMvc mockMvc;
 	
 	@MockBean
@@ -38,6 +40,11 @@ public class SpringJpah2ApplicationTests {
 		
 		System.out.println(mvcResult.getResponse());
 		Mockito.verify(userService).findAll();
-	}
+	}*/
 
+	@Test
+	public void add() {
+		int a = 5;
+		Assert.assertEquals(a, 5);
+	}
 }

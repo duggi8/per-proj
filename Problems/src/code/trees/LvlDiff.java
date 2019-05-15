@@ -76,7 +76,7 @@ public class LvlDiff {
 	/*Queue can be used for breadth first traversal.
 	 * 1.insert root in queue
 	 * 2.remove it and process its children
-	 * 3. repeat untill queue is empty.
+	 * 3. repeat until queue is empty.
 	 * Here trick is to find size of queue and make those only many internal iterations
 	 * to add the level sum.
 	 * 1.Initially size = 1 , so we perform one iteration and come back to external loop.

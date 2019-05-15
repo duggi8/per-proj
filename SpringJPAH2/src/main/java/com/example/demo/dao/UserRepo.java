@@ -11,5 +11,5 @@ import com.example.demo.entity.User;
 @Repository
 public interface UserRepo extends JpaRepository<User, Integer>{
 
-	List<User> findByTeamNameAndName(String teamName);
+	
 }
